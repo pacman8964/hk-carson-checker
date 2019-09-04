@@ -18,6 +18,7 @@ before_script:
   - rm dangerousCarList.xlsx
   - wget -O dangerousCarList.xlsx https://docs.google.com/spreadsheets/d/$SHEET_ID/export?format=xlsx
   - node exportData
+  - cd ../
 
 script:
   - yarn build
