@@ -22,7 +22,7 @@ export default class ChatHistory extends React.Component {
               <br />
               <span className="license">{ messageObj.license }</span>
               {
-                messageObj.safe ? <span className="safe"> is Safe</span> : <span className="alert"> is Dangerous</span>
+                messageObj.safe ? <span className="safe"> not on the list 不在名單上</span> : <span className="alert"> on the list 在名單上</span>
               }
               <br />
               <span>{ messageObj.desc }</span>

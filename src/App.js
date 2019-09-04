@@ -7,14 +7,7 @@ class App extends Component {
   state = {
     isLoading: true,
     db:{},
-    history: [
-      // {
-      //   license: 'AB1234',
-      //   desc: 'This is description',
-      //   safe: true,
-      //   ts: new Date().valueOf()
-      // }
-    ]
+    history: []
   }
 
   constructor() {
@@ -28,11 +21,7 @@ class App extends Component {
   }
 
   sendMessage = (message) => {
-    // for now this will let us know things work.  `console` will give us a
-    // warning though
-    console.log('sendMessage', message);
-    console.log('db', this.state.db);
-
+    // console.log('sendMessage', message);
     let desc = ''
     let safe = true
     let checkData = this.state.db[message.replace(/\s/g, '').toUpperCase()]
