@@ -8,9 +8,6 @@ cache: yarn
 before_install:
   # set up awscli packages
   - pip install --user awscli
-  # set up yarn
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
-  - export PATH="$HOME/.yarn/bin:$PATH"
 
 install:
   - yarn install
@@ -25,6 +22,6 @@ before_script:
 script:
   - yarn build
 
-deploy:
+after_success:
   - aws s3 cp ./build/ s3://$S3_BUCKET/ --recursive
   - aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_ID" --paths "/*"
